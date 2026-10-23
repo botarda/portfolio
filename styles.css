@@ -1,0 +1,1869 @@
+/* ========================================
+   DEVELOPER WINDOW
+   Detalhe discreto, não protagonista
+======================================== */
+
+.developer-window {
+    position: relative;
+
+    width: 100%;
+    max-width: 300px;
+
+    justify-self: end;      /* encosta à direita da coluna */
+    margin-left: auto;      /* reforço, caso o justify-self seja ignorado */
+
+    background: #ffffff;
+    border: 1px solid #c9dce9;
+    box-shadow: 0 10px 30px rgba(20, 70, 110, 0.07);
+
+    overflow: hidden;
+}
+
+
+/* ---------- Acentos amarelos ---------- */
+
+.accent {
+    position: absolute;
+    background: #f4c542;
+    z-index: 5;
+}
+
+.accent-top {
+    top: -1px;
+    left: 24px;
+    width: 50px;
+    height: 3px;
+}
+
+.accent-right {
+    top: 28px;
+    right: -1px;
+    width: 3px;
+    height: 36px;
+}
+
+.accent-bottom {
+    bottom: -1px;
+    right: 24px;
+    width: 40px;
+    height: 3px;
+}
+
+
+/* ---------- Header ---------- */
+
+.window-header {
+    height: 34px;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+
+    border-bottom: 1px solid #dce8f2;
+    background: #f8fbfe;
+}
+
+.window-controls {
+    display: flex;
+    gap: 5px;
+    padding-left: 12px;
+}
+
+.window-controls span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #b8cddd;
+}
+
+.module-name {
+    padding-left: 14px;
+
+    font-family: "SFMono-Regular", Consolas, monospace;
+    font-size: 10px;
+    color: #45657e;
+}
+
+.window-year {
+    padding-right: 12px;
+
+    font-family: monospace;
+    font-size: 9px;
+    color: #91a5b6;
+}
+
+
+/* ---------- Conteúdo ---------- */
+
+.window-content {
+    padding: 12px 14px;
+}
+
+.file-path {
+    margin-bottom: 8px;
+
+    font-family: monospace;
+    font-size: 9px;
+    color: #8aa0b3;
+}
+
+.developer-window pre {
+    margin: 0;
+    overflow-x: auto;
+
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 11px;
+    line-height: 1.5;
+    color: #45657e;
+}
+
+.code-keyword {
+    color: #2f80ed;
+    font-weight: 600;
+}
+
+.code-class {
+    color: #123b63;
+    font-weight: 600;
+}
+
+.code-property {
+    color: #55738c;
+}
+
+.code-string {
+    color: #4f8a70;
+}
+
+
+/* ---------- Terminal e estado ---------- */
+
+.terminal-line {
+    display: flex;
+    gap: 8px;
+
+    margin-top: 10px;
+    padding-top: 8px;
+
+    border-top: 1px solid #e2ebf2;
+
+    font-family: monospace;
+    font-size: 10px;
+    color: #536f84;
+}
+
+.terminal-symbol {
+    color: #2f80ed;
+    font-weight: bold;
+}
+
+.running-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 8px;
+
+    font-family: monospace;
+    font-size: 9px;
+    color: #7c94a6;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #f4c542;
+    box-shadow: 0 0 0 3px rgba(244, 197, 66, 0.13);
+}
+
+/* ---------- LINKS  SBRE MIM ---------- */ 
+
+
+.about-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.about-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.9rem;
+
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid currentColor;
+
+    transition: opacity 0.3s ease;
+}
+
+.about-links a:hover {
+    opacity: 0.6;
+}
+
+.about-links a > i:first-child {
+    font-size: 1.1rem;
+}
+
+.about-links a > span {
+    border-bottom: none;
+}
+
+.about-links .link-arrow,
+.about-links .download-arrow {
+    font-size: 0.75rem;
+    margin-left: 0.15rem;
+    transition: transform 0.3s ease;
+}
+
+.about-links a:hover .link-arrow {
+    transform: translate(2px, -2px);
+}
+
+.about-links a:hover .download-arrow {
+    transform: translateY(2px);
+}
+
+
+
+
+
+/* ---------- Footer ---------- */
+
+.window-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 6px 14px;
+
+    border-top: 1px solid #dce8f2;
+    background: #f8fbfe;
+
+    font-family: monospace;
+    font-size: 8px;
+    color: #8298aa;
+}
+
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+    .developer-window {
+        justify-self: start;    /* hero passa a 1 coluna: alinha com o texto */
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .developer-window {
+        max-width: 100%;
+    }
+
+    .developer-window pre {
+        font-size: 10.5px;
+    }
+}
+
+
+/* ========================================
+   RESTOOOOOOOOOOOO
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: #c7c7d6;
+
+    color: #275f97;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   VARIABLES
+======================================== */
+
+:root {
+
+    --blue-dark: #123b63;
+    --blue: #2f80ed;
+    --blue-light: #eaf3fa;
+
+    --text: #123b63;
+    --muted: #6f879a;
+
+    --border: #d7e5ef;
+
+    --yellow: #f4c542;
+
+    --white: #ffffff;
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    width: 100%;
+
+    height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: rgba(248, 251, 254, 0.92);
+
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* Logo */
+
+.logo {
+
+    font-family: monospace;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    color: var(--blue-dark);
+}
+
+.logo span {
+
+    color: var(--blue);
+}
+
+
+/* Navigation */
+
+.navbar nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+}
+
+.navbar nav a {
+
+    position: relative;
+
+    text-decoration: none;
+
+    font-family: monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: var(--muted);
+
+    transition: color 0.25s ease;
+}
+
+.navbar nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -6px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--yellow);
+
+    transition: width 0.25s ease;
+}
+
+.navbar nav a:hover {
+
+    color: var(--blue);
+}
+
+.navbar nav a:hover::after {
+
+    width: 100%;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    min-height: calc(100vh - 76px);
+
+    margin: 0 auto;
+
+    padding: 90px 6%;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+/* Hero content */
+
+.hero-content {
+
+    max-width: 760px;
+}
+
+
+/* System label */
+
+.system {
+
+    margin-bottom: 24px;
+
+    font-family: monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: var(--blue ); 
+}
+
+
+/* Main title */
+
+.hero h1 {
+
+    margin: 0;
+
+    font-size: clamp(58px, 8vw, 110px);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    font-weight: 700;
+
+    color: var(--blue-dark);
+}
+
+.hero h1 span {
+
+    color: var(--blue);
+}
+
+
+/* Description */
+
+.description {
+
+    max-width: 540px;
+
+    margin-top: 32px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color:#4c555f;
+}
+
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 35px;
+}
+
+.button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding: 0 22px;
+
+    border: 1px solid var(--blue);
+
+    text-decoration: none;
+
+    font-family: monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* Primary */
+
+.button.primary {
+
+    background: var(--blue);
+
+    color: white;
+}
+
+.button.primary:hover {
+
+    background: var(--blue-dark);
+
+    border-color: var(--blue-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* Secondary */
+
+.button.secondary {
+
+    background: transparent;
+
+    color: var(--blue);
+}
+
+.button.secondary:hover {
+
+    background: var(--blue-light);
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   GENERAL SECTIONS
+======================================== */
+
+.section {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 130px 6%;
+}
+
+
+/* Section label */
+
+.section-label {
+
+    margin-bottom: 35px;
+
+    font-family: monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: var(--blue);
+}
+
+
+/* Section title */
+
+.section h2 {
+
+    max-width: 750px;
+
+    font-size: clamp(38px, 5vw, 70px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    color: var(--blue-dark);
+}
+
+
+/* Section text */
+
+.section-text {
+
+    max-width: 650px;
+
+    margin-top: 30px;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #4c555f;;
+}
+
+
+/* ========================================
+   SKILLS
+======================================== */
+
+.skills {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-top: 40px;
+}
+
+
+.skill {
+
+    position: relative;
+
+    padding: 28px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    font-family: monospace;
+
+    font-size: 12px;
+
+    color: var(--blue-dark);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* Yellow detail */
+
+.skill::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -1px;
+
+    left: -1px;
+
+    width: 35px;
+
+    height: 3px;
+
+    background: var(--yellow);
+}
+
+
+.skill:hover {
+
+    transform: translateY(-4px);
+
+    border-color: #b9d1e2;
+}
+
+
+/* ========================================
+   PROJECTS
+======================================== */
+
+.projects {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+
+    margin-top: 40px;
+}
+
+
+/* Project card */
+
+.project-card {
+
+    position: relative;
+
+    padding: 35px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Yellow corner */
+
+.project-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    right: 0;
+
+    width: 70px;
+
+    height: 3px;
+
+    background: var(--yellow);
+}
+
+
+/* Second yellow detail */
+
+.project-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 40px;
+
+    height: 3px;
+
+    background: var(--yellow);
+}
+
+
+.project-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 50px rgba(18, 59, 99, 0.08);
+}
+
+
+/* Project number */
+
+.project-card > span {
+
+    font-family: monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    color: var(--blue);
+}
+
+
+/* Project title */
+
+.project-card h3 {
+
+    margin-top: 22px;
+
+    font-size: 28px;
+
+    letter-spacing: -1px;
+
+    color: var(--blue-dark);
+}
+
+
+/* Project description */
+
+.project-card p {
+
+    margin-top: 15px;
+
+    color: var(--muted);
+
+    line-height: 1.7;
+}
+
+
+/* Technologies */
+
+.technologies {
+
+    margin-top: 25px;
+
+    font-family: monospace;
+
+    font-size: 10px;
+
+    color: #8096a7;
+}
+
+
+/* Project link */
+
+.project-card a {
+
+    display: inline-block;
+
+    margin-top: 25px;
+
+    font-family: monospace;
+
+    font-size: 10px;
+
+    color: var(--blue);
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.project-card a:hover {
+
+    color: var(--blue-dark);
+}
+
+
+/* ========================================
+   CONTACT
+======================================== */
+
+.contact {
+
+    padding-bottom: 160px;
+}
+
+.contact h2 {
+
+    max-width: 800px;
+
+    margin-bottom: 40px;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+
+    width: 100%;
+
+    padding: 25px 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-top: 1px solid var(--border);
+
+    font-family: monospace;
+
+    font-size: 9px;
+
+    color: #8196a7;
+}
+
+
+/* ========================================
+   RESPONSIVE — TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+
+        padding: 0 5%;
+
+    }
+
+    .navbar nav {
+
+        gap: 20px;
+
+    }
+
+    .hero {
+
+        min-height: auto;
+
+        padding-top: 100px;
+
+        padding-bottom: 100px;
+
+    }
+
+    .skills {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .projects {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+/* ========================================
+   RESPONSIVE — MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+
+        height: auto;
+
+        min-height: 70px;
+
+        padding: 18px 20px;
+
+    }
+
+    .navbar nav {
+
+        gap: 14px;
+    }
+
+    .navbar nav a {
+
+        font-size: 8px;
+
+    }
+
+
+    /* Hero */
+
+    .hero {
+
+        padding: 70px 20px;
+
+    }
+
+    .system {
+
+        font-size: 9px;
+
+        letter-spacing: 1.5px;
+
+    }
+
+    .hero h1 {
+
+        font-size:
+            clamp(48px, 15vw, 72px);
+
+        letter-spacing: -3px;
+
+    }
+
+    .description {
+
+        font-size: 15px;
+
+        margin-top: 25px;
+
+    }
+
+
+    /* Buttons */
+
+    .buttons {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        max-width: 300px;
+
+    }
+
+    .button {
+
+        width: 100%;
+
+    }
+
+
+    /* Sections */
+
+    .section {
+
+        padding: 90px 20px;
+
+    }
+
+    .section h2 {
+
+        font-size: 42px;
+
+        letter-spacing: -2px;
+
+    }
+
+    .section-text {
+
+        font-size: 15px;
+
+    }
+
+
+    /* Skills */
+
+    .skills {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    /* Projects */
+
+    .project-card {
+
+        padding: 28px;
+
+    }
+
+    .project-card h3 {
+
+        font-size: 24px;
+
+    }
+
+
+    /* Footer */
+
+    footer {
+
+        padding: 22px 20px;
+
+    }
+
+}
+
+
+/* ========================================
+   VERY SMALL SCREENS
+======================================== */
+
+@media (max-width: 380px) {
+
+    .navbar nav {
+
+        gap: 9px;
+
+    }
+
+    .navbar nav a {
+
+        font-size: 7px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 45px;
+
+    }
+
+}
+
+.hero {
+    width: 100%;
+    max-width: 1400px;
+    min-height: calc(100vh - 76px);
+    min-height: calc(100svh - 76px);   /* melhor em telemóveis */
+
+    margin: 0 auto;
+    padding: 90px 6%;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;   /* texto | card */
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+.developer-window {
+    justify-self: end;
+    flex-shrink: 0;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.system,
+.hero h1,
+.description,
+.buttons {
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.system      { animation-delay: 0.05s; }
+.hero h1     { animation-delay: 0.15s; }
+.description { animation-delay: 0.3s; }
+.buttons     { animation-delay: 0.45s; }
+
+.developer-window {
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.6s forwards;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-6px); }
+}
+
+.developer-window {
+    animation:
+        fadeUp 0.9s ease 0.6s forwards,
+        float 6s ease-in-out 1.6s infinite;
+}
+
+.developer-window,
+.skill,
+.project-card {
+    transition:
+        background 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease,
+        transform 0.4s ease;
+}
+
+.developer-window:hover {
+    border-color: #8ec5f5;
+    box-shadow: 0 14px 40px rgba(47, 128, 237, 0.15);
+}
+
+.developer-window:hover .window-header,
+.developer-window:hover .window-footer {
+    background: #eaf3fa;      /* celeste claro */
+}
+
+.skill:hover {
+    background: var(--blue-light);
+    border-color: #8ec5f5;
+}
+
+.skill:hover::before {
+    width: 60px;              /* o detalhe amarelo estica */
+}
+
+@keyframes skyShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body {
+    background: linear-gradient(120deg, #8787ea, #b8c5d1, #c9c9da);
+    background-size: 300% 300%;
+    animation: skyShift 18s ease-in-out infinite;
+}
+
+/* Ponto amarelo a pulsar */
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(244, 197, 66, 0.13); }
+    50%      { box-shadow: 0 0 0 7px rgba(244, 197, 66, 0); }
+}
+
+.status-dot {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Cursor a piscar depois de "./portfolio --start" */
+.terminal-line span:last-child::after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 11px;
+    margin-left: 4px;
+    background: var(--blue);
+    vertical-align: middle;
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* ========================================
+    boton "NO" que foge do cursor
+======================================== */
+
+/* ========================================
+   CONTACT CHOICE
+======================================== */
+
+.contact-choice {
+    position: relative;
+
+    width: 100%;
+    max-width: 700px;
+
+    margin-top: 40px;
+
+    min-height: 230px;
+}
+
+
+/* ========================================
+   CONTACT BUTTONS
+======================================== */
+
+.contact-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 35px;
+}
+
+
+/* ========================================
+   NO BUTTON
+======================================== */
+
+#noBtn {
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    background: transparent;
+}
+
+
+/*
+    Só depois de começar a fugir
+    é que passa para absolute.
+*/
+
+#noBtn.running {
+    position: absolute;
+
+    transition:
+        left 0.3s cubic-bezier(.2, .8, .2, 1),
+        top 0.3s cubic-bezier(.2, .8, .2, 1);
+}
+
+
+/* ========================================
+   HINT
+======================================== */
+
+.choice-hint {
+
+    min-height: 20px;
+
+    margin-top: 20px;
+
+    font-family: monospace;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: var(--muted);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .contact-choice {
+        min-height: 280px;
+    }
+
+    .contact-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    #noBtn.running {
+        width: auto;
+    }
+
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    #noBtn.running {
+        transition: none;
+    }
+
+}
+
+/* TEMA OSCURO */ 
+
+
+
+/* ========================================
+   DARK MODE — PRESERVA AS ANIMACOES
+   Colocar no fim do CSS atual
+======================================== */
+
+:root {
+    --page-bg: #c7c7d6;
+    --surface: #ffffff;
+    --surface-header: #f8fbfe;
+    --text-main: #123b63;
+    --text-body: #4c555f;
+    --text-muted: #6f879a;
+    --line: #d7e5ef;
+    --blue-light: #eaf3fa;
+    --window-code: #45657e;
+}
+
+/* Tema escuro */
+html[data-theme="dark"] {
+    color-scheme: dark;
+
+    --page-bg: #10141c;
+    --surface: #191f2b;
+    --surface-header: #171d27;
+    --text-main: #e3edf8;
+    --text-body: #c0cad7;
+    --text-muted: #a1b2c5;
+    --line: #303d4d;
+    --blue-light: #202e40;
+    --window-code: #b5c9dc;
+
+    --blue-dark: #a9c9f0;
+    --blue: #70adff;
+    --text: #e3edf8;
+    --muted: #a1b2c5;
+    --border: #303d4d;
+    --white: #191f2b;
+}
+
+/* Fundo: mantém a animação skyShift */
+body {
+    background-color: var(--page-bg);
+    color: #303d4d
+    transition #303d4d 0.10s ease;
+}
+
+html[data-theme="dark"] body {
+    background-image: linear-gradient(
+        120deg,
+        #111827,
+        #202b3a,
+        #151b29
+    );
+    background-size: 300% 300%;
+    animation: skyShift 18s ease-in-out infinite;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(248, 251, 254, 0.92);
+    background: color-mix(
+        in srgb,
+        var(--surface-header) 92%,
+        transparent
+    );
+    border-bottom-color: var(--line);
+    transition: background-color 0.4s ease,
+                border-color 0.4s ease;
+}
+
+.logo,
+.hero h1,
+.section h2,
+.project-card h3 {
+    color: var(--text-main);
+}
+
+.navbar nav a,
+.choice-hint {
+    color: var(--text-muted);
+}
+
+.description,
+.section-text {
+    color: var(--text-body);
+}
+
+/* Janela de código */
+.developer-window {
+    background: var(--surface);
+    border-color: var(--line);
+    transition: background-color 0.40s ease,
+                border-color 0.40s ease,
+                box-shadow 0.40s ease,
+                transform 0.40s ease;
+}
+
+.window-header,
+.window-footer {
+    background: var(--surface-header);
+    border-color: var(--line);
+}
+
+.module-name,
+.developer-window pre {
+    color: var(--window-code);
+}
+
+.file-path,
+.window-year,
+.running-status {
+    color: var(--text-muted);
+}
+
+.code-class {
+    color: var(--text-main);
+}
+
+.code-property {
+    color: var(--text-muted);
+}
+
+.code-string {
+    color: #80cba5;
+}
+
+.terminal-line {
+    color: var(--text-body);
+    border-top-color: var(--line);
+}
+
+/* Skills e projetos */
+.skill,
+.project-card {
+    background: var(--surface);
+    border-color: var(--line);
+    transition: background-color 0.4s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease,
+                transform 0.4s ease;
+}
+
+.skill {
+    color: var(--text-main);
+}
+
+.project-card h3 {
+    color: var(--text-main);
+}
+
+.project-card p {
+    color: var(--text-muted);
+}
+
+.technologies,
+footer {
+    color: var(--text-muted);
+}
+
+.project-card a:hover {
+    color: var(--blue);
+}
+
+.skill:hover {
+    background: var(--blue-light);
+}
+
+.project-card:hover {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
+}
+
+/* Botões */
+.button.secondary {
+    color: var(--blue);
+}
+
+.button.secondary:hover {
+    background: var(--blue-light);
+}
+
+.button.primary:hover {
+    background:rgba(47, 128, 237, 0.15)
+    border-color var(--blue-dark);
+}
+
+/* Footer e links */
+footer {
+    border-top-color: var(--line);
+}
+
+.about-links a {
+    color: var(--text-main);
+}
+
+/* Botão de tema */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 9px 12px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+
+    background: var(--surface);
+    color: var(--text-main);
+
+    font-family: monospace; 
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition: background-color 0.50s ease,
+                color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    border-color: var(--blue);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 4px;
+}
+
+/* Mobile: navbar com espaço para o botão */
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .theme-toggle {
+        padding: 7px 9px;
+        font-size: 9px;
+    }
+}
+
+/* Respeita a preferência por movimento reduzido - no se nota mucho */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+html[data-theme="dark"] .developer-window:hover .window-header,
+html[data-theme="dark"] .developer-window:hover .window-footer {
+    background: #202b3a;
+}
+
+
+/* ========================================
+   TEMAS CLARO E ESCURO
+   Mantém as animações originais
+======================================== */
+
+:root {
+    color-scheme: light;
+
+    --page-bg-1: #8787ea;
+    --page-bg-2: #b8c5d1;
+    --page-bg-3: #c9c9da;
+
+    --surface: #ffffff;
+    --surface-header: #f8fbfe;
+
+    --text-main: #123b63;
+    --text-body: #4c555f;
+    --text-muted: #6f879a;
+
+    --border: #d7e5ef;
+    --blue: #2f80ed;
+    --blue-dark: #123b63;
+    --blue-light: #eaf3fa;
+
+    --yellow: #f4c542;
+    --code-color: #45657e;
+}
+
+/* TEMA ESCURO */
+html[data-theme="dark"] {
+    color-scheme: dark;
+
+    --page-bg-1: #10131f;
+    --page-bg-2: #202a3b;
+    --page-bg-3: #111a29;
+
+    --surface: #171e2a;
+    --surface-header: #1d2634;
+
+    --text-main: #e7edf7;
+    --text-body: #c1ccda;
+    --text-muted: #9baec2;
+
+    --border: #344255;
+    --blue: #82b8ff;
+    --blue-dark: #c5ddff;
+    --blue-light: #222f42;
+
+    --yellow: #f4c542;
+    --code-color: #b5c9dc;
+}
+
+/* FUNDO ANIMADO NOS DOIS TEMAS */
+body {
+    background: linear-gradient(
+        120deg,
+        var(--page-bg-1),
+        var(--page-bg-2),
+        var(--page-bg-3)
+    );
+
+    background-size: 300% 300%;
+    animation: skyShift 18s ease-in-out infinite;
+
+    color: var(--text-main);
+
+    transition: color 0.4s ease;
+}
+
+/* Mantém o movimento do gradiente no tema escuro */
+html[data-theme="dark"] body {
+    background-image: linear-gradient(
+        120deg,
+        var(--page-bg-1),
+        var(--page-bg-2),
+        var(--page-bg-3)
+    );
+}
+
+/* SUPERFÍCIES */
+.developer-window,
+.skill,
+.project-card {
+    background-color: var(--surface);
+    border-color: var(--border);
+}
+
+.window-header,
+.window-footer {
+    background-color: var(--surface-header);
+    border-color: var(--border);
+}
+
+/* TEXTOS */
+.logo,
+.hero h1,
+.section h2,
+.project-card h3,
+.skill {
+    color: var(--text-main);
+}
+
+.description,
+.section-text {
+    color: var(--text-body);
+}
+
+.navbar nav a,
+.project-card p,
+.technologies,
+footer,
+.running-status {
+    color: var(--text-muted);
+}
+
+.developer-window pre,
+.module-name {
+    color: var(--code-color);
+}
+
+/* NAVBAR */
+.navbar {
+    background: color-mix(
+        in srgb,
+        var(--surface-header) 92%,
+        transparent
+    );
+
+    border-bottom-color: var(--border);
+}
+
+/* BOTÕES */
+.button.secondary {
+    color: var(--blue);
+}
+
+.button.secondary:hover,
+.skill:hover {
+    background: var(--blue-light);
+}
+
+.button.primary {
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+/* LINKS */
+.about-links a {
+    color: var(--text-main);
+}
+
+.project-card a {
+    color: var(--blue);
+}
+
+/* MANTÉM OS DETALHES AMARELOS */
+.accent,
+.skill::before,
+.project-card::before,
+.project-card::after {
+    background-color: var(--yellow);
+}
+
+/* HOVER DA JANELA */
+.developer-window:hover {
+    border-color: var(--blue);
+    box-shadow: 0 14px 40px rgba(47, 128, 237, 0.15);
+}
+
+html[data-theme="dark"] .developer-window:hover {
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.3);
+}
+
+.developer-window:hover .window-header,
+.developer-window:hover .window-footer {
+    background-color: var(--blue-light);
+}
+
+/* O PONTO CONTINUA A PULSAR */
+.status-dot {
+    background-color: var(--yellow);
+}
+
+/* O CURSOR CONTINUA A PISCAR */
+.terminal-line span:last-child::after {
+    background-color: var(--blue);
+}
+
+/* BOTÃO DE ALTERNAR TEMA */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+
+    background: var(--surface);
+    color: var(--text-main);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+
+    font-family: monospace;
+    font-size: 10px;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    border-color: var(--blue);
+}
